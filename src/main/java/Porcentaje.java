@@ -15,36 +15,45 @@ public class Porcentaje {
     public static void main (String args[]){
          Scanner sc = new Scanner (System.in);
          
-         
         
-         
-         
+      
           System.out.println("ingrese el bono total");
-          int bono = sc.nextInt();
+          double bono = sc.nextInt();
           System.out.println("ingrese la calificacion obtenida en jefe");
-          double j = sc.nextDouble();
+          double calificacionJefe  = sc.nextDouble();
           System.out.println("ingrese la calificacion obtenida en comision");
-          double y= sc.nextDouble();
+          double calificacionComision = sc.nextDouble();
           System.out.println("ingrese la calificacion obtenida en clima");
-          double z = sc.nextDouble();
+          double calificacionClima = sc.nextDouble();
           System.out.println("ingrese la calificacion obtenida en bitacora");
-          double x= sc.nextDouble();
+          double calificacionBitacora = sc.nextDouble();
           
-          int Tcalif = (int) (j + y + z + x);
           
-           
-          double Por = (Tcalif * 100)/ 40;
-         System.out.println("obtuvo de calificacion de %"+Por);
           
-          double Porc = Por/100;
+         Double PorcentajeJefe=(calificacionJefe*40)/10;
+        Double PorcentaComision=(calificacionComision*10)/10;
+        Double PorcentaClima=(calificacionClima*10)/10;
+        Double PorcentajeBitacora=(calificacionBitacora*40)/10;
+              
+        Double CalificaionPorcentaje=(PorcentajeJefe+PorcentaComision+PorcentaClima+PorcentajeBitacora);
+        
+        Double BonoPorcentajeJefe=(3000*PorcentajeJefe)/100;
+        System.out.println(BonoPorcentajeJefe);
+        Double BonoPorcentajeComusion=(3000*PorcentaComision)/100;
+        Double BonoPorcentajeClima=(3000*PorcentaClima)/100;
+        Double BonoPorcentajeBitacora=(3000*PorcentajeBitacora)/100;
+        
+        Double BonoFinal = BonoPorcentajeJefe + BonoPorcentajeComusion + BonoPorcentajeClima + BonoPorcentajeBitacora;
           
-          int porcentaje = (int) (bono * Porc);
           
-          System.out.println("su bono total es: $"+porcentaje);
+         
+          
+          System.out.println("Obtuvo de Calificacion = "+CalificaionPorcentaje+"%"+"\n Su Bono total es de $ "+BonoFinal);
+    }
           
           
          
         
     }
     
-}
+
